@@ -1,0 +1,30 @@
+Services to be called -
+1. Authentication: Spring Security
+2. Authorization: Authorization table
+3. RefData: Map<RefDataType, Set<RefData>>
+4. FetchUserInformation: User object
+Contents of User Object
+id
+loginId
+client
+List<vendor>
+List<Phone>
+List<Address>
+List<Email>
+relocationDate
+userType
+userRole
+engagementStartDate
+engagementEndDate
+
+Company Object:
+id
+code
+List<vendor>
+List<Phone>
+List<Address>
+List<Email>
+companyType
+userRole
+engagementStartDate
+engagementEndDate
