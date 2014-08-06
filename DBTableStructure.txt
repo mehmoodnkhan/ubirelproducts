@@ -1,0 +1,92 @@
+Name of the project - mehmood
+
+Table structure
+
+01. USER
+    ID
+    LOGIN_ID    [First Three characters of client + First 2 characters of First Name + First 2 characters of Last Name + Count of the client users]
+    TYPE        [FK of the USER_TYPE]
+    ROLE        [FK of the USER_ROLE]
+    ENGAGEMENT_START_DATE
+    ENGAGEMENT_END_DATE
+    ACTIVE
+
+02. COMPANY
+    ID
+    CODE
+    NAME
+    TYPE                    [{COMPANY_TYPE} CLIENT, VENDOR, ORGANIZATION]
+    ENGAGEMENT_START_DATE
+    ENGAGEMENT_END_DATE
+    ACTIVE
+    
+03. REF_DATA
+    ID
+    TYPE            [USER_TYPE, USER_ROLE, CONTACT_NUMBER_TYPE, ADDRESS_TYPE]
+    VALUE           [{USER_TYPE} OR, CO, EE, VR / {USER_ROLE} SU, AD, US/ {CO_NUM} PR, SE, WO, LL / {ADDR} PA, OH, NH, TP, OO, NO]
+    DISPLAY_VALUE   [{USER_TYPE} ORGANIZATION, CLIENT, EMPLOYEE, VENDOR / {USER_ROLE} SUPER, ADMIN, USER/ {CO_NUM} PRIMARY, SECONDARY, WORK, LANDLINE / {ADDR} PERMANENT ADDRESS, OLD HOME, NEW HOME, TEMPORARY, OLD OFFICE, NEW OFFICE]
+    DESCRIPTION
+    SORT_ORDER
+    ACTIVE_FLAG
+    
+04. PHONE
+    ID
+    NUMBER
+    TYPE
+
+05. ADDRESS
+    ID
+    TYPE
+    STREET NUMBER
+    
+06. EMAIL
+    ID
+    EMAIL       [PRIMARY, SECONDARY, CLIENT]
+    TYPE
+
+07. AUTHORIZATION
+    ID
+    USER_ID
+    PASSCODE
+    STATUS      [LOCKED, DORMANT, ACTIVE]
+
+08. DESIGNATION
+    ID
+    USER_ID
+    VALUE           [MD, ED, CO, VP, FR]
+    DISPLAY_VALUE   [Managing Director, ]
+
+09. USER_PHONE_RELATION
+    ID
+    USER_ID
+    PHONE_ID
+    
+10. COMPANY_PHONE_RELATION
+    ID
+    COMPANY_ID
+    PHONE_ID
+
+11. USER_EMAIL_RELATION
+    ID
+    USER_ID
+    EMAIL_ID
+
+12. COMPANY_EMAIL_RELATION
+    ID
+    COMPANY_ID
+    EMAIL_ID
+
+13. USER_CLIENT_RELATION
+    ID
+    USER_ID
+    CLIENT_ID
+
+14. USER_VENDOR_RELATION
+    ID
+    USER_ID
+    VENDOR_ID
+
+15. CLIENT_VENDOR_RELATION
+    ID
+    CLIENT_ID  {Should be of type CLIENT only in Company table}
+    VENDOR_ID   {Should be of type Vendor only in Company table}
